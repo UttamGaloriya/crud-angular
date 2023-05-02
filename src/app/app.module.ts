@@ -20,7 +20,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ViewboxComponent } from './pages/viewbox/viewbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     ViewComponent,
     UpdateComponent,
     ViewUserComponent,
+    ViewboxComponent,
     
     
 
@@ -46,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MatTableModule,
     MatRadioModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule
 
 
   ],

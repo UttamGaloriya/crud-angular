@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { userObj } from '../interfaces/user';
-import {MatDialog} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
 
 userData: userObj;
 
-
  
 constructor(public dialog: MatDialog) { 
     
@@ -23,9 +22,16 @@ this.userData = new userObj();
   
 }
 
-openDialog(){this.dialog.open(DialogElementsExampleDialog);confirm('are you sure ?')}
-ngOnInit(): void {}
+openDialog(){
+  this.dialog.open(DialogElementsExampleDialog),{
+    data:"uttam",      }  
+}
+ngOnInit(): void {
 
+
+  
+}
+//new id genrate
 newId(){
 
   const oldRecord = localStorage.getItem('userList')
@@ -37,6 +43,7 @@ newId(){
   }
 }
 
+//svae data
 savedata(){
 
   const latestId = this.newId()
@@ -52,14 +59,30 @@ savedata(){
       userArr.push(this.userData);
       localStorage.setItem('userList',JSON.stringify(userArr));
     }
-//  this.openDialog()
+ this.openDialog()
 }
 
 
 }
+
+
 
 @Component({
   selector: 'dialog-elements-example-dialog',
   templateUrl: 'dialog-elements-example-dialog.html',
 })
-export class DialogElementsExampleDialog {}
+
+
+export class DialogElementsExampleDialog {
+  @Input() datax:string="uttam";
+
+ 
+constructor(
+public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
+  @Inject(MAT_DIALOG_DATA) public data:any) {}
+
+//METHOD FOR CLOSE
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}

@@ -43,7 +43,7 @@ export class UpdateComponent implements OnInit {
       userList.push(this.userData);
       localStorage.setItem('userList',JSON.stringify(userList));
     } 
-    this.router.navigateByUrl('/userlisting');
+    this.router.navigateByUrl('/view');
 
   }
 }

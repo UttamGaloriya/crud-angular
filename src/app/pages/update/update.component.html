@@ -1,39 +1,61 @@
-<form class="form-data">
+<div class="sub-container">
+    <form class="form-data" #dataform="ngForm">
 
-    <mat-form-field appearance="outline" class="max-width">
-        <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="userData.userName" name="userName" type="text">
-    </mat-form-field>
+        <mat-form-field appearance="outline" class="max-width">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="userData.userName" name="userName" pattern="^[a-zA-Z]+$" type="text"
+                #name="ngModel" required>
+            <mat-error *ngIf="name.invalid">
+                Enter your name
+            </mat-error>
 
-    <mat-form-field appearance="outline" class="max-width">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="userData.userEmail" name="userEmail" type="text">
-    </mat-form-field>
-    <mat-radio-group aria-label="Select an option" class="max-width" [(ngModel)]="userData.userGender">
-        <mat-radio-button value="male" class="gen" name="userGender"
-            [(ngModel)]="userData.userGender">male</mat-radio-button>
-        <mat-radio-button value="female" class="gen" name="userGender"
-            [(ngModel)]="userData.userGender">female</mat-radio-button>
-    </mat-radio-group>
-    <mat-form-field appearance="outline" class="max-width">
-        <mat-label>City</mat-label>
-        <mat-select [(ngModel)]="userData.userCity" name="userCity" type="text">
-            <mat-option value="surat">surat</mat-option>
-            <mat-option value="ahemdabad">ahemdabad</mat-option>
-            <mat-option value="vadodara">vadodara</mat-option>
-            <mat-option value="rajkot">rajkot</mat-option>
-            <mat-option value="bhavnagar">bhavnagar</mat-option>
-        </mat-select>
-    </mat-form-field>
+        </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline" class="max-width">
-        <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="userData.userAddress"
-            name="userAddress"></textarea>
-    </mat-form-field>
+        <mat-form-field appearance="outline" class="max-width">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="userData.userEmail" name="userEmail" type="text" required #email="ngModel"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <mat-error *ngIf="email.invalid">
+                enter email
+            </mat-error>
+        </mat-form-field>
+        <div class="radio-group">
 
 
-    <button mat-flat-button title="submit data" color="primary" (click)="update()"
-        [routerLink]="['/userlisting']">Submit</button>
+            <mat-radio-group aria-label="Select an option" class="max-width" [(ngModel)]="userData.userGender"
+                name="userGender" #gen="ngModel" required>
+                <span class="radio-name">Gender</span>
+                <mat-radio-button value="male" class="gen">male</mat-radio-button>
+                <mat-radio-button value="female" class="gen">female</mat-radio-button>
 
-</form>
+            </mat-radio-group>
+        </div>
+        <mat-form-field appearance="outline" class="max-width">
+            <mat-label>City</mat-label>
+            <mat-select [(ngModel)]="userData.userCity" name="userCity" type="text" #city="ngModel" required>
+                <mat-option value="surat">surat</mat-option>
+                <mat-option value="ahemdabad">ahemdabad</mat-option>
+                <mat-option value="vadodara">vadodara</mat-option>
+                <mat-option value="rajkot">rajkot</mat-option>
+                <mat-option value="bhavnagar">bhavnagar</mat-option>
+            </mat-select>
+            <mat-error *ngIf="city.invalid">
+                Select City
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline" class="max-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="userData.userAddress"
+                name="userAddress" required #add="ngModel" pattern="^[^\s]+(\s.*)?$">
+            </textarea>
+            <mat-error *ngIf="add.invalid">
+                Address
+            </mat-error>
+        </mat-form-field>
+
+
+        <button mat-flat-button title="submit data" color="primary" (click)="update()"
+            [routerLink]="['/view']">Update</button>
+    </form>
+</div>
