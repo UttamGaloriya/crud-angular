@@ -26,13 +26,16 @@
         </div>
         <mat-form-field appearance="outline" class="max-width">
             <mat-label>City</mat-label>
-            <mat-select [(ngModel)]="userData.userCity" name="userCity" type="text">
+            <mat-select [(ngModel)]="userData.userCity" name="userCity" type="text" #city="ngModel">
                 <mat-option value="surat">surat</mat-option>
                 <mat-option value="ahemdabad">ahemdabad</mat-option>
                 <mat-option value="vadodara">vadodara</mat-option>
                 <mat-option value="rajkot">rajkot</mat-option>
                 <mat-option value="bhavnagar">bhavnagar</mat-option>
             </mat-select>
+            <mat-error *ngIf="city.invalid">
+                Select City
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="outline" class="max-width">
