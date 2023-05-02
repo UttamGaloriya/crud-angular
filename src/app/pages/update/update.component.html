@@ -1,0 +1,39 @@
+<form class="form-data">
+
+    <mat-form-field appearance="outline" class="max-width">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="userData.userName" name="userName" type="text">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="max-width">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="userData.userEmail" name="userEmail" type="text">
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option" class="max-width" [(ngModel)]="userData.userGender">
+        <mat-radio-button value="male" class="gen" name="userGender"
+            [(ngModel)]="userData.userGender">male</mat-radio-button>
+        <mat-radio-button value="female" class="gen" name="userGender"
+            [(ngModel)]="userData.userGender">female</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="outline" class="max-width">
+        <mat-label>City</mat-label>
+        <mat-select [(ngModel)]="userData.userCity" name="userCity" type="text">
+            <mat-option value="surat">surat</mat-option>
+            <mat-option value="ahemdabad">ahemdabad</mat-option>
+            <mat-option value="vadodara">vadodara</mat-option>
+            <mat-option value="rajkot">rajkot</mat-option>
+            <mat-option value="bhavnagar">bhavnagar</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline" class="max-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="userData.userAddress"
+            name="userAddress"></textarea>
+    </mat-form-field>
+
+
+    <button mat-flat-button title="submit data" color="primary" (click)="update()"
+        [routerLink]="['/userlisting']">Submit</button>
+
+</form>
