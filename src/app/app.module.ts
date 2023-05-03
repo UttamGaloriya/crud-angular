@@ -8,20 +8,22 @@ import { ViewComponent } from './pages/view/view.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
 
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatButtonModule} from '@angular/material/button';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
 
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDialogModule} from '@angular/material/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { ViewboxComponent } from './pages/viewbox/viewbox.component';
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +32,6 @@ import { ViewboxComponent } from './pages/viewbox/viewbox.component';
     UpdateComponent,
     ViewUserComponent,
     ViewboxComponent,
-    
-    
-
-    
   ],
   imports: [
     BrowserModule,
@@ -49,11 +47,10 @@ import { ViewboxComponent } from './pages/viewbox/viewbox.component';
     MatRadioModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatToolbarModule
-
-
+    MatToolbarModule,
+    MatCardModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

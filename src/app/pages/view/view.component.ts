@@ -16,7 +16,6 @@ export class ViewComponent implements OnInit {
 
   userList: userObj[];
   constructor(public dialog: MatDialog, private dailogServices: DailogService) {
-    //  this.userData = new userObj();
     this.userList = [];
   }
 
@@ -36,7 +35,7 @@ export class ViewComponent implements OnInit {
     'Action',
   ];
 
-  delete(id: any) {
+  delete(id: number) {
     // console.log(id);
     const oldRecords = localStorage.getItem('userList');
     const records = localStorage.getItem('userList');
@@ -66,5 +65,10 @@ export class ViewComponent implements OnInit {
           }
         }
       });
+  }
+
+  viewData(id: number) {
+    const newid = this.userList.findIndex((a: any) => a.userId == id);
+    this.dailogServices.openview(this.userList[newid]);
   }
 }

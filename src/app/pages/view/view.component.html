@@ -40,6 +40,9 @@
             <button mat-icon-button title="edit data" color="primary" [routerLink]="['/upadte',element.userId]">
                 <mat-icon>edit</mat-icon>
             </button>
+            <button mat-icon-button title="delete data" color="warn" (click)="viewData(element.userId)">
+                <mat-icon color="red">View</mat-icon>
+            </button>
             <button mat-icon-button title="delete data" color="warn" (click)="delete(element.userId)"
                 id="{element.userId}">
                 <mat-icon>delete</mat-icon>
