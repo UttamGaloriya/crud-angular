@@ -60,7 +60,9 @@ savedata(){
       localStorage.setItem('userList',JSON.stringify(userArr));
     }
  this.openDialog()
+ console.log(this.userData)
 }
+
 
 
 }
