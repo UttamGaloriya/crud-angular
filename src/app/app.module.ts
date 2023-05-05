@@ -7,22 +7,23 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ViewComponent } from './pages/view/view.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
-
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { MatButtonModule } from '@angular/material/button';
-
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatDialogModule } from '@angular/material/dialog';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { ViewboxComponent } from './pages/viewbox/viewbox.component';
-import { MatCardModule } from '@angular/material/card';
+
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatSelectModule } from '@angular/material/select';
+// import { MatTableModule } from '@angular/material/table';
+// import { MatRadioModule } from '@angular/material/radio';
+// import { MatDialogModule } from '@angular/material/dialog';
+// import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatCardModule } from '@angular/material/card';
+
+import { MatmodualModule } from './matmodual/matmodual.module';
 
 @NgModule({
   declarations: [
@@ -36,19 +37,21 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatBottomSheetModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    FormsModule,
-    MatTableModule,
-    MatRadioModule,
-    MatDialogModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
+    FormsModule,
+
+    // MatButtonModule,
+    // MatIconModule,
+    // MatFormFieldModule,
+    // MatInputModule,
+    // MatSelectModule,
+    // MatTableModule,
+    // MatRadioModule,
+    // MatDialogModule,
+    // MatToolbarModule,
+    // MatCardModule,
+    //
+    MatmodualModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
